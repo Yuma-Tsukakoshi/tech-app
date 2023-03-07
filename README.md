@@ -15,7 +15,7 @@ php artisan db:seed
 
 srcディレクトリで npm run dev を実行した後にlocalhostにアクセスすると表示されます
 
-終わったらexitと打てば普通のターミナルに戻ります。
+control + D で抜けられます。
 
 これらを全てした上でlocalhostにいく
 chromeのリンク書くところにlocalhostって入れてもらえれば大丈夫です！
