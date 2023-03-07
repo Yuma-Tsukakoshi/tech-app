@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+  mysql:
+    image: "mysql:8.0.31"
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db/var/lib/mysql:/var/lib/mysql
+      - ./db/etc/my.conf:/etc/mysql/conf.d/my.conf
+    environment:
+      - MYSQL_DATABASE=laravel
+      - MYSQL_USER=laravel
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+    platform: linux/x86_64  
+  phpfpm:
+    build:
+      context: ./app
+    volumes:
+      - ./src:/work/backend
+    depends_on: ["mysql"]
+  nginx:
+    build:
+      context: ./web
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/work/backend
+    depends_on: ["phpfpm"]
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      PMA_HOST: 'mysql'
+      PMA_USER: 'laravel'
+      PMA_PASSWORD: 'password'
+    ports:
+    - 8081:80
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"

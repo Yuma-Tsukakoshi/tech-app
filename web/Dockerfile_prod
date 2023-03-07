@@ -1,0 +1,6 @@
+FROM nginx
+
+COPY ./web/etc/nginx/conf.d/default_prod.conf /etc/nginx/conf.d/default.conf
+COPY ./src/ /work/backend
+
+WORKDIR /work/backend

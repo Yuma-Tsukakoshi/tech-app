@@ -1,0 +1,22 @@
+FROM php:7.4-fpm-buster
+
+COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
+
+RUN apt-get update && \
+  apt-get -y install git libicu-dev libonig-dev libzip-dev unzip locales && \
+  apt-get clean && \
+  docker-php-ext-install intl pdo_mysql zip bcmath
+
+COPY ./app/usr/local/etc/php/php.ini /usr/local/etc/php/php.ini
+COPY ./src/ /work/backend
+COPY ./src/.env_stg /work/backend/.env
+
+WORKDIR /work/backend
+
+RUN chown -R www-data:www-data /work/backend
+RUN composer install
+
+COPY ./app/usr/local/bin/docker-php-entrypoint /usr/local/bin/docker-php-entrypoint
+RUN chmod 775 /usr/local/bin/docker-php-entrypoint
+
+CMD ["php-fpm"]
