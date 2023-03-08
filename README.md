@@ -1,9 +1,9 @@
 # tech-app
-POSSEのカリキュラムサポートを目的にアプリ開発
+## POSSEのカリキュラムサポートを目的にアプリ開発
 
 いつも通りgit cloneをしたらtech-appディレクトリで以下のコマンドを実行してください。１行１行実行してね。
 
-### 追記
+
 以下の内容を、.env.exampleと同じ階層に.envファイルを作成し、貼り付けてください。
 ```console
 APP_NAME=Laravel
@@ -73,8 +73,10 @@ VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 docker-compose build --no-cache
 docker-compose up -d
 docker-compose exec phpfpm bash
+```
 
 以下は、bashでrootの中に入ったと思うので、そこで実行してね
+```console
 php artisan cache:clear
 php artisan config:cache
 composer install
@@ -88,3 +90,7 @@ control + D で抜けられます。
 
 これらを全てした上でlocalhostにいく
 chromeのリンク書くところにlocalhostって入れてもらえれば大丈夫です！
+
+## commit命名規則
+以下に従ってやろ
+![参考画像](./src/public/img/Screen%20Shot%202023-03-07%20at%2023.43.26.png)
