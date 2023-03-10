@@ -1,0 +1,24 @@
+<div>
+  <figure>
+    <img src="" alt="">
+  </figure>
+  <div>
+    <tr>
+      <td>名前</td>
+      <td>ゆうま</td>
+    </tr>
+    <tr>
+      <td>出身</td>
+      <td>埼玉</td>
+    </tr>
+    <tr>
+      <td>趣味</td>
+      <td>バスケ、スノボ</td>
+    </tr>
+    <tr>
+      <td>一言</td>
+      <td>よろしく</td>
+    </tr>
+  </div>
+  <p>ステータスポイント：<span>0</span>pt</p>
+</div>

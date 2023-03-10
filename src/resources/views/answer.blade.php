@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechApp</title>
   <script src="{{asset('/js/jquery-3.6.1.min.js')}}" defer></script>
+  <script src="{{asset('/js/accordion.js')}}" defer></script>
 </head>
 <body>
   @include('components.header')
@@ -20,7 +21,7 @@
     </div>
 
     <ul>
-      
+
       <li>
           <div class="acordion-header">
             <h3>week1</h3>
