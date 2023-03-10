@@ -77,6 +77,7 @@ docker-compose exec phpfpm bash
 
 以下は、bashでrootの中に入ったと思うので、そこで実行してね
 ```console
+composer install
 php artisan cache:clear
 php artisan config:cache
 composer install
@@ -84,6 +85,7 @@ php artisan migrate
 php artisan db:seed
 ```
 
+npm install を実行してから
 srcディレクトリで npm run dev を実行した後にlocalhostにアクセスすると表示されます
 
 control + D で抜けられます。
