@@ -40,6 +40,7 @@
       </label>
       <input id="question-github-link" placeholder="GitHubのリンク" type="text">
       <input id="question-branch" placeholder="自分のいるブランチ名" type="text">
+      <input id="question-file" placeholder="問題が起きてるファイル名" type="text">
 
       <label for="question-reproduce">
         6,再現手順
