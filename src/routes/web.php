@@ -24,3 +24,8 @@ Route::get('/main',function(){
 Route::get('/answer' ,function(){
     return view('answer');
 });
+
+// 質問投稿フォームサイトに飛ぶ
+Route::get('/question' ,function(){
+    return view('question');
+});
