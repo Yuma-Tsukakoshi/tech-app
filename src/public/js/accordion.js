@@ -21,12 +21,17 @@ $(() => {
   });
 });
 
+// 絞り込みで条件に一致するものにfadeinをあてて、それ以外にfadeoutをあてる
 $("#filter-button").click(function(){
   const weekData = $(this).prev().val();
-  // console.log(weekData);
-  const targetData = $(".answer-item").filter(
+  $(".answer-item").filter(
     function(){
       return ($(this).attr('week')==weekData);
     }
-  )
+  ).fadeIn(500);
+  $(".answer-item").filter(
+    function(){
+      return ($(this).attr('week')!=weekData);
+    }
+  ).fadeOut(0);
 })
