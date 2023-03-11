@@ -29,6 +29,6 @@ Route::get('/main/ph2' ,function(){
 });
 
 // 質問投稿フォームサイトに飛ぶ
-Route::get('/question' ,function(){
+Route::get('/main/question' ,function(){
     return view('question');
 });
