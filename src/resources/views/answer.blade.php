@@ -16,11 +16,11 @@
     <div>
       <h2>week絞り込み</h2>
       <label for="week">week</label>
-      <input type="text" value="1" id="week">
-      <button>検索</button>
+      <input type="text" name="week" id="week">
+      <input type="button" value="検索" id="filter-button">
     </div>
 
-    <ul>
+    <ul class="answer-list">
 
       <li class="answer-item" week="1">
           <div>

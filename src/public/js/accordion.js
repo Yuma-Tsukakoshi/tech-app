@@ -20,3 +20,13 @@ $(() => {
     }
   });
 });
+
+$("#filter-button").click(function(){
+  const weekData = $(this).prev().val();
+  // console.log(weekData);
+  const targetData = $(".answer-item").filter(
+    function(){
+      return ($(this).attr('week')==weekData);
+    }
+  )
+})
