@@ -15,12 +15,51 @@
     {{-- データベースまだつくってないので、飛ぶ場所適当 --}}
     <form action="/main" method="POST">
       @csrf
-      <label for="question-problem">1,起きている問題</label><input type="text" placeholder="何を実装したい？" id="question-problem">
-      <label for="question-bottleneck">2,現状:どこに詰まっている？</label><input type="text" placeholder="なんのエラーが出てる？" id="question-bottleneck">
-      <label for="question-copy">3,現状：エラーのコピペ</label><input type="text" placeholder="何を実装したい？" id="question-copy">
-      <label for="question-effort">4,施策：問題を解決するために試したこと・考えたこと</label><input type="text" id="question-effort">
-      <label for="question-link">5,GitHubのリンクと、自分がいるブランチ名、問題が起きてるファイル名</label><input type="text" id="question-link">
-      <label for="question-reproduce">6,再現手順</label><input type="text" placeholder="（入るコンテナや使用するパスワードなど）" id="question-reproduce">
+      {{-- 1,起きている問題 --}}
+      <div class="qustion-first">
+        <label for="question-problem" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          1,起きている問題
+        </label>
+        <textarea placeholder="何を実装したい？" id="question-problem" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+      </div>
+      {{-- 2,現状:どこに詰まっている？ --}}
+      <div class="question-second">
+        <label for="question-bottleneck" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          2,現状:どこに詰まっている？
+        </label>
+        <textarea placeholder="なんのエラーが出てる？" id="question-bottleneck" cols="50" rows="10" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+
+      </div>
+      {{-- 3,現状：エラーのコピペ --}}
+      <div class="question-third">
+        <label for="question-copy" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          3,現状：エラーのコピペ
+        </label>
+        <textarea placeholder="何を実装したい？" id="question-copy" cols="50" rows="10" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+      </div>
+      {{-- 4,施策：問題を解決するために試したこと・考えたこと --}}
+      <div class="qustion-forth">
+        <label for="question-effort" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          4,施策：問題を解決するために試したこと・考えたこと
+        </label>
+        <textarea id="question-effort" cols="50" rows="10" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+      </div>
+      {{-- 5,GitHubのリンクと、自分がいるブランチ名、問題が起きてるファイル名 --}}
+      <div class="qustion-fifth mb-6">
+        <label for="question-link" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          5,GitHubのリンクと、自分がいるブランチ名、問題が起きてるファイル名
+        </label>
+        <input id="question-github-link" placeholder="GitHubのリンク" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <input id="question-branch" placeholder="自分のいるブランチ名" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <input id="question-file" placeholder="問題が起きてるファイル名" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      </div>
+      {{-- 6,再現手順 --}}
+      <div class="question-sixth">
+        <label for="question-reproduce" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          6,再現手順
+        </label>
+        <textarea placeholder="（入るコンテナや使用するパスワードなど）" id="question-reproduce" cols="50" rows="10" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+      </div>
     </form>
   </section>
 </body>
