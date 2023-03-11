@@ -16,18 +16,18 @@
     <div>
       <h2>week絞り込み</h2>
       <label for="week">week</label>
-      <input type="text" value="1" id="week">
-      <button>検索</button>
+      <input type="text" name="week" id="week">
+      <input type="button" value="検索" id="filter-button">
     </div>
 
-    <ul>
+    <ul class="answer-list">
 
-      <li>
-          <div class="acordion-header">
+      <li class="answer-item" week="1">
+          <div>
             <h3>week1</h3>
-            <button>詳細</button>
+            <button class="detail-button">詳細</button>
           </div>
-          <ul>
+          <ul class="answer-content-list">
             <li>
               <p>Google Chromeをインストールしましたか？</p>
               <button>ヒントへ</button>
@@ -43,12 +43,12 @@
           </ul>
       </li>
 
-      <li>
-          <div class="acordion-header">
+      <li class="answer-item" week="2">
+          <div>
             <h3>week2</h3>
-            <button>詳細</button>
-          </div>
-          <ul>
+            <button class="detail-button">詳細</button>
+          </div> 
+          <ul class="answer-content-list">
             <li>
               <p>Google Chromeをインストールしましたか？</p>
               <button>ヒントへ</button>
@@ -62,6 +62,51 @@
               <button>ヒントへ</button>
             </li>
           </ul>
+      </li>
+
+      <li class="answer-item" week="3">
+        <div>
+          <h3>week3</h3>
+          <button class="detail-button">詳細</button>
+        </div> 
+        <ul class="answer-content-list">
+          <li>
+            <p>Gitコマンドをインストールしましたか？</p>
+            <button>ヒントへ</button>
+          </li>
+          <li>
+            <p>"GitHubのposse-apにあるリポジトリ「template-ph1-website」をforkできましたか？
+              ※リンク: https://github.com/posse-ap/template-ph1-website"</p>
+            <button>ヒントへ</button>
+          </li>
+          <li>
+            <p>forkした「template-ph1-website」をcloneできましたか？</p>
+            <button>ヒントへ</button>
+          </li>
+        </ul>
+      </li>
+
+      <li class="answer-item" week="4">
+        <div>
+          <h3>week4</h3>
+          <button class="detail-button">詳細</button>
+        </div> 
+        <ul class="answer-content-list">
+          <li>
+            <p>htmlファイルの中でstyle指定をしていないことを確認しましたか？</p>
+            <button>ヒントへ</button>
+          </li>
+          <li>
+            <p>全体的な見た目はデザインと同じになっていますか？</p>
+            <button>ヒントへ</button>
+          </li>
+          <li>
+            <p>"メインビジュアルを作成できましたか？
+              - 画像と見出しが被さるような見た目で実装できましたか？
+              - 「Scroll Down」を左下に配置できましたか？"</p>
+            <button>ヒントへ</button>
+          </li>
+        </ul>
       </li>
 
     </ul>
