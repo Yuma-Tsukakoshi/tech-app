@@ -15,12 +15,12 @@
     {{-- データベースまだつくってないので、飛ぶ場所適当 --}}
     <form action="/main" method="POST">
       @csrf
-      <label for="question-problem">1,起きている問題</label><input type="text" placeholder="何を実装したい？" id="question-problem">
-      <label for="question-bottleneck">2,現状:どこに詰まっている？</label><input type="text" placeholder="なんのエラーが出てる？" id="question-bottleneck">
-      <label for="question-copy">3,現状：エラーのコピペ</label><input type="text" placeholder="何を実装したい？" id="question-copy">
-      <label for="question-effort">4,施策：問題を解決するために試したこと・考えたこと</label><input type="text" id="question-effort">
-      <label for="question-link">5,GitHubのリンクと、自分がいるブランチ名、問題が起きてるファイル名</label><input type="text" id="question-link">
-      <label for="question-reproduce">6,再現手順</label><input type="text" placeholder="（入るコンテナや使用するパスワードなど）" id="question-reproduce">
+      <label for="question-problem">1,起きている問題</label><textarea type="text" placeholder="何を実装したい？" id="question-problem" cols="50" rows="10"></textarea>
+      <label for="question-bottleneck">2,現状:どこに詰まっている？</label><textarea type="text" placeholder="なんのエラーが出てる？" id="question-bottleneck" cols="50" rows="10"></textarea>
+      <label for="question-copy">3,現状：エラーのコピペ</label><textarea type="text" placeholder="何を実装したい？" id="question-copy" cols="50" rows="10"></textarea>
+      <label for="question-effort">4,施策：問題を解決するために試したこと・考えたこと</label><textarea type="text" id="question-effort" cols="50" rows="10"></textarea>
+      <label for="question-link">5,GitHubのリンクと、自分がいるブランチ名、問題が起きてるファイル名</label><textarea type="text" id="question-link" cols="50" rows="10"></textarea>
+      <label for="question-reproduce">6,再現手順</label><textarea type="text" placeholder="（入るコンテナや使用するパスワードなど）" id="question-reproduce" cols="50" rows="10"></textarea>
     </form>
   </section>
 </body>
