@@ -26,7 +26,8 @@
   {{-- 質問投稿フォーム --}}
   <section>
     <h1>質問投稿フォームはこちら</h1>
-    <button type="button" onclick="location.href='{{ route('./question') }}' ">質問</button>
+    {{-- <button type="button" onclick="location.href='{{ route('./question') }}' ">質問</button> --}}
+    <button type="button">質問</button>
   </section>
 </body>
 </html>
