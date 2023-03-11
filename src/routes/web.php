@@ -21,8 +21,11 @@ Route::get('/main',function(){
     return view('main');
 });
 
-Route::get('/answer' ,function(){
-    return view('answer');
+Route::get('/main/ph1' ,function(){
+    return view('answerPh1');
+});
+Route::get('/main/ph2' ,function(){
+    return view('answerPh2');
 });
 
 // 質問投稿フォームサイトに飛ぶ
