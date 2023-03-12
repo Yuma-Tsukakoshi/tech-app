@@ -12,7 +12,7 @@
   @include('components.header')
   {{-- 質問投稿フォーム --}}
   <section class="mx-9 my-6">
-    <h1 class="mx-9 my-6">質問投稿フォームはこちら</h1>
+    <h1 class="mx-9 my-6">質問投稿フォーム</h1>
     {{-- データベースまだつくってないので、飛ぶ場所適当 --}}
     <form action="/main" method="POST">
       @csrf
@@ -60,6 +60,20 @@
           6,再現手順
         </label>
         <textarea placeholder="（入るコンテナや使用するパスワードなど）" id="question-reproduce" cols="50" rows="10" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 shadow-lg"></textarea>
+      </div>
+      {{-- 匿名、実名ボタン --}}
+      <div class="mx-9 my-6 flex gap-6 justify-center ">
+        <div class="flex items-center">
+          <input checked id="default-radio-1" type="radio" value="onymous" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">実名希望</label>
+        </div>
+        <div class="flex items-center">
+          <input id="default-radio-2" type="radio" value="anonymous" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="default-radio-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">匿名希望</label>
+        </div>
+      </div>
+      <div class="mx-9 my-6 text-center">
+        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 shadow-xl">投稿</button>
       </div>
     </form>
   </section>
