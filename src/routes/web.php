@@ -32,3 +32,6 @@ Route::get('/main/ph2' ,function(){
 Route::get('/main/question' ,function(){
     return view('question');
 });
+
+// 質問投稿フォームで投稿されたときの処理,コントローラーに飛ぶようにする。
+Route::post('/main/question' , [QuesionController::class, "post"]);
