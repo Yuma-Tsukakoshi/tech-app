@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\QuestionController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,9 +31,10 @@ Route::get('/main/ph2' ,function(){
 });
 
 // 質問投稿フォームサイトに飛ぶ
-Route::get('/main/question' ,function(){
-    return view('question');
-});
+// Route::get('/main/question' ,function(){
+//     return view('question');
+// });
 
 // 質問投稿フォームで投稿されたときの処理,コントローラーに飛ぶようにする。
-Route::post('/main/question' , [QuesionController::class, "post"]);
+Route::get('/main/question', [QuestionController::class, "index"]);
+Route::post('/main/question' , [QuestionController::class, "post"]);

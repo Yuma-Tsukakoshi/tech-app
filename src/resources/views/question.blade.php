@@ -13,8 +13,19 @@
   {{-- 質問投稿フォーム --}}
   <section class="mx-9 my-6">
     <h1 class="mx-9 my-6">質問投稿フォーム</h1>
+    <h2 class="mx-9 my-2">{{$msg}}</h2>
+    {{-- エラーメッセージてすと --}}
+    @if(count($errors) > 0)
+    <div>
+      <ul>
+        @foreach ($errors->all as $error)
+            <li>{{$error}}</li>
+        @endforeach
+      </ul>
+    </div>
+    @endif
     {{-- データベースまだつくってないので、飛ぶ場所適当 --}}
-    <form action="/main" method="POST">
+    <form action="/main/question" method="post" id="question-form">
       @csrf
       {{-- 1,起きている問題 --}}
       <div class="qustion-first mx-9 my-6">
@@ -72,10 +83,10 @@
           <label for="default-radio-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">匿名希望</label>
         </div>
       </div>
-      <div class="mx-9 my-6 text-center">
-        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 shadow-xl">投稿</button>
-      </div>
     </form>
+    <div class="mx-9 my-6 text-center">
+      <button class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 shadow-xl" type="submit" form="question-form">投稿</button>
+    </div>
   </section>
 </body>
 </html>
