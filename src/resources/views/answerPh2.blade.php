@@ -1,87 +1,26 @@
 @extends('layouts.each_ph_answer')
 
 @section('answer-items')
-<li class="answer-item" week="17">
-  <div>
-    <h3>week17</h3>
-    <button class="detail-button">詳細</button>
+@for ($i = 17; $i <= 32; $i++)
+<li class="answer-item m-4" week="{{$i}}">
+  <div class="flex justify-evenly m-1 p-1 font-bold text-lg">
+    <h3>week{{$i}}</h3>
+    <button class="detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-1 px-6 border-b-4 border-blue-800 hover:border-blue-500 rounded-3xl shadow-xl">詳細</button>
   </div>
-  <ul class="answer-content-list">
-    <li>
-      <p>Dockerをインストール出来ましたか？	</p>
-      <button>ヒントへ</button>
+  <ul class="answer-content-list mx-8 bg-gray-50 shadow-xl">
+    <li class="flex justify-between my-6 mx-2 p-2 font-bold bg-slate-100 rounded-xl shadow-xl">
+      <p>Dockerをインストール出来ましたか？</p>
+      <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-1 px-6 border-b-4 border-blue-800 hover:border-blue-500 rounded-3xl shadow-xl">ヒントへ</button>
     </li>
-    <li>
-      <p>テンプレートをfork&clone出来ましたか？	</p>
-      <button>ヒントへ</button>
+    <li class="flex justify-between my-6 mx-2 p-2 font-bold bg-slate-100 rounded-xl shadow-xl">
+      <p>テンプレートをfork&clone出来ましたか？</p>
+      <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-1 px-6 border-b-4 border-blue-800 hover:border-blue-500 rounded-3xl shadow-xl">ヒントへ</button>
     </li>
-    <li>
+    <li class="flex justify-between my-6 mx-2 p-2 font-bold bg-slate-100 rounded-xl shadow-xl">
       <p>docker-compose up を実行しましたか？</p>
-      <button>ヒントへ</button>
+      <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-1 px-6 border-b-4 border-blue-800 hover:border-blue-500 rounded-3xl shadow-xl">ヒントへ</button>
     </li>
   </ul>
 </li>
-
-<li class="answer-item" week="18">
-  <div>
-    <h3>week18</h3>
-    <button class="detail-button">詳細</button>
-  </div> 
-  <ul class="answer-content-list">
-    <li>
-      <p>https://it-biz.online/it-skills/database/ を読んで、内容を理解しましたか？</p>
-      <button>ヒントへ</button>
-    </li>
-    <li>
-      <p>問題テーブル、選択肢テーブルの設計は理解できましたか？</p>
-      <button>ヒントへ</button>
-    </li>
-    <li>
-      <p>正規化について理解できましたか？</p>
-      <button>ヒントへ</button>
-    </li>
-  </ul>
-</li>
-
-<li class="answer-item" week="19">
-  <div>
-    <h3>week19</h3>
-    <button class="detail-button">詳細</button>
-  </div> 
-  <ul class="answer-content-list">
-    <li>
-      <p>phpMyAdminの画面を開くことが出来まし たか？	</p>
-      <button>ヒントへ</button>
-    </li>
-    <li>
-      <p>questionsテーブルを作成することが出  来ましたか？</p>
-      <button>ヒントへ</button>
-    </li>
-    <li>
-      <p>choicesテーブルを作成することが出来  ましたか？</p>
-      <button>ヒントへ</button>
-    </li>
-  </ul>
-</li>
-
-<li class="answer-item" week="20">
-  <div>
-    <h3>week20</h3>
-    <button class="detail-button">詳細</button>
-  </div> 
-  <ul class="answer-content-list">
-    <li>
-      <p>PDOについて理解できましたか？</p>
-      <button>ヒントへ</button>
-    </li>
-    <li>
-      <p>dbconnect.phpを作成し、DB接続処理を実装出来ましたか？</p>
-      <button>ヒントへ</button>
-    </li>
-    <li>
-      <p>"正しい接続情報で、DB接続処理が正常に出来ることを確認しました  か？白い画面になります"</p>
-      <button>ヒントへ</button>
-    </li>
-  </ul>
-</li>
+@endfor
 @endsection
