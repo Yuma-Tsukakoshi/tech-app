@@ -1,90 +1,26 @@
 @extends('layouts.each_ph_answer')
 
 @section('answer-items')
-<li class="answer-item" week="1">
-  <div>
-    <h3>week1</h3>
-    <button class="detail-button">詳細</button>
+@for ($i = 1; $i <= 16; $i++)
+<li class="answer-item m-4" week="{{$i}}">
+  <div class="flex justify-evenly m-1 p-1 font-bold text-lg">
+    <h3>week{{$i}}</h3>
+    <button class="detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-1 px-6 border-b-4 border-blue-800 hover:border-blue-500 rounded-3xl shadow-xl">詳細</button>
   </div>
-  <ul class="answer-content-list">
-    <li>
+  <ul class="answer-content-list mx-8 bg-gray-50 shadow-xl">
+    <li class="flex justify-between my-6 mx-2 p-2 font-bold bg-slate-100 rounded-xl shadow-xl">
       <p>Google Chromeをインストールしましたか？</p>
-      <button>ヒントへ</button>
+      <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-1 px-6 border-b-4 border-blue-800 hover:border-blue-500 rounded-3xl shadow-xl">ヒントへ</button>
     </li>
-    <li>
+    <li class="flex justify-between my-6 mx-2 p-2 font-bold bg-slate-100 rounded-xl shadow-xl">
       <p>Visual Studio Codeをインストールしましたか？</p>
-      <button>ヒントへ</button>
+      <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-1 px-6 border-b-4 border-blue-800 hover:border-blue-500 rounded-3xl shadow-xl">ヒントへ</button>
     </li>
-    <li>
+    <li class="flex justify-between my-6 mx-2 p-2 font-bold bg-slate-100 rounded-xl shadow-xl">
       <p>Visual Studio Codeの初期設定(editorの設定と日本語化)は出来ましたか？</p>
-      <button>ヒントへ</button>
+      <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-1 px-6 border-b-4 border-blue-800 hover:border-blue-500 rounded-3xl shadow-xl">ヒントへ</button>
     </li>
   </ul>
 </li>
-
-<li class="answer-item" week="2">
-  <div>
-    <h3>week2</h3>
-    <button class="detail-button">詳細</button>
-  </div> 
-  <ul class="answer-content-list">
-    <li>
-      <p>Google Chromeをインストールしましたか？</p>
-      <button>ヒントへ</button>
-    </li>
-    <li>
-      <p>Visual Studio Codeをインストールしましたか？</p>
-      <button>ヒントへ</button>
-    </li>
-    <li>
-      <p>Visual Studio Codeの初期設定(editorの設定と日本語化)は出来ましたか？</p>
-      <button>ヒントへ</button>
-    </li>
-  </ul>
-</li>
-
-<li class="answer-item" week="3">
-  <div>
-    <h3>week3</h3>
-    <button class="detail-button">詳細</button>
-  </div> 
-  <ul class="answer-content-list">
-    <li>
-      <p>Gitコマンドをインストールしましたか？</p>
-      <button>ヒントへ</button>
-    </li>
-    <li>
-      <p>"GitHubのposse-apにあるリポジトリ「template-ph1-website」を  forkできましたか？
-        ※リンク: https://github.com/posse-ap/ template-ph1-website"</p>
-      <button>ヒントへ</button>
-    </li>
-    <li>
-      <p>forkした「template-ph1-website」をcloneできましたか？</p>
-      <button>ヒントへ</button>
-    </li>
-  </ul>
-</li>
-
-<li class="answer-item" week="4">
-  <div>
-    <h3>week4</h3>
-    <button class="detail-button">詳細</button>
-  </div> 
-  <ul class="answer-content-list">
-    <li>
-      <p>htmlファイルの中でstyle指定をしていないことを確認しましたか？  </p>
-      <button>ヒントへ</button>
-    </li>
-    <li>
-      <p>全体的な見た目はデザインと同じになっていますか？</p>
-      <button>ヒントへ</button>
-    </li>
-    <li>
-      <p>"メインビジュアルを作成できましたか？
-        - 画像と見出しが被さるような見た目で実装できましたか？
-        - 「Scroll Down」を左下に配置できましたか？"</p>
-      <button>ヒントへ</button>
-    </li>
-  </ul>
-</li>
+@endfor
 @endsection

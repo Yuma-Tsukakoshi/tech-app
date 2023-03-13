@@ -13,11 +13,11 @@
   @include('components.header')
 
   <section>
-    <div>
+    <div class="flex justify-evenly m-4 p-4 font-bold text-2xl">
       <h2>week絞り込み</h2>
-      <label for="week">week</label>
-      <input type="text" name="week" id="week">
-      <input type="button" value="検索" id="filter-button">
+      <label for="week" class="cursor-pointer">week</label>
+      <input type="text" name="week" id="week" class="text-center cursor-pointer bg-slate-200 rounded-3xl shadow-xl" required>
+      <input type="button" value="検索" id="filter-button" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-800 hover:border-blue-500 rounded-3xl shadow-xl">
     </div>
 
     <ul class="answer-list">
