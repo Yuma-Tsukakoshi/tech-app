@@ -32,3 +32,9 @@ Route::get('/main/ph2' ,function(){
 Route::get('/main/question' ,function(){
     return view('question');
 });
+
+// ヒント詳細ページに飛ぶ
+Route::get('/main/hint' ,function(){
+    return view('hint');
+});
+

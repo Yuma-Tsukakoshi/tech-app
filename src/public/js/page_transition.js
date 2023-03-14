@@ -9,3 +9,4 @@ for(let i=1; i <= 4; i++){
 $("#transition-question").on('click',function(){
   location.href = 'http://localhost/main/question'
 })
+
