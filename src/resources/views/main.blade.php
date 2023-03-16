@@ -12,6 +12,8 @@
 <body>
   @include('components.header')
 
+  <p>{{ session('success_message') }}</p>
+  
   <section>
     <ul class="mt-12">
       @for ($i = 1; $i <= 4; $i++)

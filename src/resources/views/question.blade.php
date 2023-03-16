@@ -25,7 +25,7 @@
     </div>
     @endif
     {{-- データベースまだつくってないので、飛ぶ場所適当 --}}
-    <form action="/main/question" method="post" id="question-form">
+    <form action="{{ route('question.post') }}" method="post" id="question-form">
       @csrf
       {{-- 1,起きている問題 --}}
       <div class="qustion-first mx-9 my-6">
@@ -34,14 +34,24 @@
         </label>
         <textarea placeholder="何を実装したい？" id="question-problem" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 shadow-lg" name="problem"></textarea>
       </div>
+      @error('problem')
+          @component('components.error_message')
+              <strong>{{ $message }}</strong>
+          @endcomponent
+      @enderror
       {{-- 2,現状:どこに詰まっている？ --}}
       <div class="question-second mx-9 my-6">
         <label for="question-bottleneck" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
           2,現状:どこに詰まっている？
         </label>
-        <textarea placeholder="なんのエラーが出てる？" id="question-bottleneck" cols="50" rows="10" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 shadow-lg" name="botttle-neck"></textarea>
+        <textarea placeholder="なんのエラーが出てる？" id="question-bottleneck" cols="50" rows="10" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 shadow-lg" name="bottle-neck"></textarea>
 
       </div>
+      @error('bottle-neck')
+          @component('components.error_message')
+              <strong>{{ $message }}</strong>
+          @endcomponent
+      @enderror
       {{-- 3,現状：エラーのコピペ --}}
       <div class="question-third mx-9 my-6">
         <label for="question-copy" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -49,6 +59,11 @@
         </label>
         <textarea placeholder="何を実装したい？" id="question-copy" cols="50" rows="10" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 shadow-lg" name="screenshot"></textarea>
       </div>
+      @error('screenshot')
+          @component('components.error_message')
+              <strong>{{ $message }}</strong>
+          @endcomponent
+      @enderror
       {{-- 4,施策：問題を解決するために試したこと・考えたこと --}}
       <div class="qustion-forth mx-9 my-6">
         <label for="question-effort" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -56,14 +71,29 @@
         </label>
         <textarea id="question-effort" cols="50" rows="10" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 shadow-lg" name="effort"></textarea>
       </div>
+      @error('effort')
+          @component('components.error_message')
+              <strong>{{ $message }}</strong>
+          @endcomponent
+      @enderror
       {{-- 5,GitHubのリンクと、自分がいるブランチ名、問題が起きてるファイル名 --}}
       <div class="qustion-fifth mx-9 my-6">
         <label for="question-link" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
           5,GitHubのリンクと、自分がいるブランチ名、問題が起きてるファイル名
         </label>
         <input id="question-github-link" placeholder="GitHubのリンク" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 shadow-lg" name="link">
+        @error('link')
+          @component('components.error_message')
+              <strong>{{ $message }}</strong>
+          @endcomponent
+        @enderror
         <input id="question-branch" placeholder="自分のいるブランチ名" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 shadow-lg" name="branch">
         <input id="question-file" placeholder="問題が起きてるファイル名" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 shadow-lg" name="file-name">
+        @error('file-name')
+          @component('components.error_message')
+              <strong>{{ $message }}</strong>
+          @endcomponent
+        @enderror
       </div>
       {{-- 6,再現手順 --}}
       <div class="question-sixth mx-9 my-6">

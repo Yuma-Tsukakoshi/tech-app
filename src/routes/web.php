@@ -16,7 +16,8 @@ use App\Http\Controllers\QuestionController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('main');
 });
 
 Route::get('/main',function(){
@@ -37,4 +38,4 @@ Route::get('/main/ph2' ,function(){
 
 // 質問投稿フォームで投稿されたときの処理,コントローラーに飛ぶようにする。
 Route::get('/main/question', [QuestionController::class, "index"]);
-Route::post('/main/question' , [QuestionController::class, "post"]);
+Route::post('/main/question' , [QuestionController::class, "post"])->name('question.post');

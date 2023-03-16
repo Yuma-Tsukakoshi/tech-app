@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\QuestionRequest;
 
 class QuestionController extends Controller
 {
@@ -10,7 +11,7 @@ class QuestionController extends Controller
         return view('question' ,['msg' => "入力してね"]);
     }
 
-    public function post(Request $request) {
+    public function post(QuestionRequest $request) {
         $validate_rule = [
             'problem' => 'required' ,
             'botttle-neck' => 'required' ,
@@ -20,6 +21,7 @@ class QuestionController extends Controller
             'file-name' => 'required' ,
         ];
         $this -> validate($request, $validate_rule);
-        return view('question', ['msg' => "正しく入力されてます。"]);
+        // return view('question', ['msg' => "正しく入力されてます。"]);
+        return redirect('/main')->with('success_message', '質問投稿が完了しました');
     }
 }
