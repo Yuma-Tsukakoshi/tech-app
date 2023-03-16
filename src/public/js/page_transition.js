@@ -9,4 +9,13 @@ for(let i=1; i <= 4; i++){
 $("#transition-question").on('click',function(){
   location.href = 'http://localhost/main/question'
 })
+// 各phのヒント一覧ページ⇒ヒントページ
+$("#transition-hint").on('click',function(){
+  location.href = 'http://localhost/main/hint'
+})
+
+// ヒントページ⇒プロフィール画面に移動
+$("#transition-profile").on('click',function(){
+  location.href = 'http://localhost/main/hint/profile'
+})
 
