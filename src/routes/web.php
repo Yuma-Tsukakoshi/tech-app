@@ -38,3 +38,8 @@ Route::get('/main/hint' ,function(){
     return view('hint');
 });
 
+// // プロフィール画面に飛ぶ
+// Route::get('/main/hint/profile',function(){
+//     return view('profile');
+// });
+
