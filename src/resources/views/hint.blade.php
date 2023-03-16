@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechApp</title>
     @vite('resources/css/app.css')
-    <script src="{{ asset('/js/jquery-3.6.1.min.js') }}" defer></script>
-    <script src="{{asset('js/page_transition.js')}}" defer></script>
+    <script src="{{ asset('/js/jquery-3.6.1.min.js')}}" defer></script>
+    <script src="{{ asset('/js/page_transition.js')}}" defer></script>
 </head>
 
 <body>
     @include('components.header')
+    @include('components.profile')
+
     <section class="mx-80">
         <h1 class="my-16 text-4xl text-center">ヒント詳細ページ</h1>
         <div class="flex my-10">

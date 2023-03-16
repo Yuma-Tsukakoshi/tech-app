@@ -15,7 +15,16 @@ $("#transition-hint").on('click',function(){
 })
 
 // ヒントページ⇒プロフィール画面に移動
-$("#transition-profile").on('click',function(){
-  location.href = 'http://localhost/main/hint/profile'
+$("#modal-profile").hide();
+$("#overlay").hide();
+$("#transition-profile").on("click",function(){
+  $("#modal-profile").fadeIn(1000);
+  $("#overlay").fadeIn(1000);
+  $("#overlay").on("click",function(){
+    $("#modal-profile").fadeOut(1000);
+    $("#overlay").fadeOut(1000);
+  })
 })
+
+
 
