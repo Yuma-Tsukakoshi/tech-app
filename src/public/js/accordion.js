@@ -22,16 +22,33 @@ $(() => {
 });
 
 // 絞り込みで条件に一致するものにfadeinをあてて、それ以外にfadeoutをあてる
-$("#filter-button").click(function(){
-  const weekData = $(this).prev().val();
-  $(".answer-item").filter(
-    function(){
-      return ($(this).attr('week')==weekData);
-    }
-  ).fadeIn(500);
-  $(".answer-item").filter(
-    function(){
-      return ($(this).attr('week')!=weekData);
-    }
-  ).fadeOut(0);
-})
+$(function(){
+  $("#filter-button").on('click',function(e){
+    e.stopPropagation();
+    e.preventDefault();
+    console.log($("#week").val());
+
+  $.ajax({
+    // TODO 正規表現で1234いずれかにできるようにする
+    url: "http://localhost/main/ph1",
+    type: "GET",
+    dataType: "JSON",
+  }).then(
+      function (data){
+        console.log(data);
+        let weekData = data.week;
+        console.log(weekData);
+        $(".answer-item").filter(
+          function(){
+            return ($(this).attr('week')==weekData);
+          }
+        ).fadeIn(500);
+        $(".answer-item").filter(
+          function(){
+            return ($(this).attr('week')!=weekData);
+          }
+        ).fadeOut(0);
+      });
+  });
+});
+
