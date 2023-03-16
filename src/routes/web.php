@@ -39,3 +39,17 @@ Route::get('/main/ph2' ,function(){
 // 質問投稿フォームで投稿されたときの処理,コントローラーに飛ぶようにする。
 Route::get('/main/question', [QuestionController::class, "index"]);
 Route::post('/main/question' , [QuestionController::class, "post"])->name('question.post');
+Route::get('/main/question' ,function(){
+    return view('question');
+});
+
+// ヒント詳細ページに飛ぶ
+Route::get('/main/hint' ,function(){
+    return view('hint');
+});
+
+// // プロフィール画面に飛ぶ
+// Route::get('/main/hint/profile',function(){
+//     return view('profile');
+// });
+

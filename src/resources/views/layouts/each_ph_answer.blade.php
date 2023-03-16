@@ -8,6 +8,7 @@
   @vite('resources/css/app.css')
   <script src="{{asset('/js/jquery-3.6.1.min.js')}}" defer></script>
   <script src="{{asset('/js/accordion.js')}}" defer></script>
+  <script src="{{asset('/js/page_transition.js')}}" defer></script>
 </head>
 <body>
   @include('components.header')
