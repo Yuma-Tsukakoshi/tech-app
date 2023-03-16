@@ -22,10 +22,10 @@ Route::get('/main',function(){
 });
 
 Route::get('/main/ph1' ,function(){
-    return view('answerPh1');
+    return view('ph.answerPh1');
 });
 Route::get('/main/ph2' ,function(){
-    return view('answerPh2');
+    return view('ph.answerPh2');
 });
 
 // 質問投稿フォームサイトに飛ぶ

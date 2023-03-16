@@ -18,11 +18,11 @@ $("#transition-hint").on('click',function(){
 $("#modal-profile").hide();
 $("#overlay").hide();
 $("#transition-profile").on("click",function(){
-  $("#modal-profile").fadeIn(1000);
-  $("#overlay").fadeIn(1000);
+  $("#modal-profile").fadeIn(500);
+  $("#overlay").fadeIn(500);
   $("#overlay").on("click",function(){
-    $("#modal-profile").fadeOut(1000);
-    $("#overlay").fadeOut(1000);
+    $("#modal-profile").fadeOut(500);
+    $("#overlay").fadeOut(500);
   })
 })
 
