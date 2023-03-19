@@ -22,16 +22,22 @@ $(() => {
 });
 
 // 絞り込みで条件に一致するものにfadeinをあてて、それ以外にfadeoutをあてる
-$("#filter-button").click(function(){
-  const weekData = $(this).prev().val();
-  $(".answer-item").filter(
-    function(){
-      return ($(this).attr('week')==weekData);
-    }
-  ).fadeIn(500);
-  $(".answer-item").filter(
-    function(){
-      return ($(this).attr('week')!=weekData);
-    }
-  ).fadeOut(0);
-})
+
+let text_form =document.getElementById('week') ;
+text_form.addEventListener('keypress',weekVal);
+
+function weekVal(e){
+  if(e.keyCode === 13){
+    let weekData = $("#week").val();
+    $(".answer-item").filter(
+      function(){
+        return ($(this).attr('week')==weekData);
+      }
+    ).fadeIn(500);
+    $(".answer-item").filter(
+      function(){
+        return ($(this).attr('week')!=weekData);
+      }
+    ).fadeOut(0);
+  }
+}

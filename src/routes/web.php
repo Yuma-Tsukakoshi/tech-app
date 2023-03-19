@@ -24,12 +24,14 @@ Route::get('/main',function(){
     return view('main');
 });
 
+//後々すべてのphに対応できるようにroute変更予定 
 Route::get('/main/ph1' ,function(){
-    return view('answerPh1');
+    return view('ph.answerPh1');
 });
 Route::get('/main/ph2' ,function(){
-    return view('answerPh2');
+    return view('ph.answerPh2');
 });
+
 
 // 質問投稿フォームサイトに飛ぶ
 // Route::get('/main/question' ,function(){
@@ -48,7 +50,7 @@ Route::get('/main/hint' ,function(){
     return view('hint');
 });
 
-// // プロフィール画面に飛ぶ
+// プロフィール画面に飛ぶ
 // Route::get('/main/hint/profile',function(){
 //     return view('profile');
 // });
