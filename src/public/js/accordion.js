@@ -22,33 +22,22 @@ $(() => {
 });
 
 // 絞り込みで条件に一致するものにfadeinをあてて、それ以外にfadeoutをあてる
-$(function(){
-  $("#filter-button").on('click',function(e){
-    e.stopPropagation();
-    e.preventDefault();
-    console.log($("#week").val());
 
-  $.ajax({
-    // TODO 正規表現で1234いずれかにできるようにする
-    url: "http://localhost/main/ph1",
-    type: "GET",
-    dataType: "JSON",
-  }).then(
-      function (data){
-        console.log(data);
-        let weekData = data.week;
-        console.log(weekData);
-        $(".answer-item").filter(
-          function(){
-            return ($(this).attr('week')==weekData);
-          }
-        ).fadeIn(500);
-        $(".answer-item").filter(
-          function(){
-            return ($(this).attr('week')!=weekData);
-          }
-        ).fadeOut(0);
-      });
-  });
-});
+let text_form =document.getElementById('week') ;
+text_form.addEventListener('keypress',weekVal);
 
+function weekVal(e){
+  if(e.keyCode === 13){
+    let weekData = $("#week").val();
+    $(".answer-item").filter(
+      function(){
+        return ($(this).attr('week')==weekData);
+      }
+    ).fadeIn(500);
+    $(".answer-item").filter(
+      function(){
+        return ($(this).attr('week')!=weekData);
+      }
+    ).fadeOut(0);
+  }
+}
