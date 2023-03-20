@@ -17,10 +17,10 @@
   <section>
     <ul class="mt-12">
       @for ($i = 1; $i <= 4; $i++)
-        <li class="flex justify-evenly m-4 p-4 font-bold text-2xl">
+        <li class="flex justify-evenly m-4 p-4 font-bold text-sm md:text-2xl">
           <h2>Ph{{$i}}</h2>
           <p>Ph{{$i}}の内容詳細</p>
-          <button id="transition-ph{{$i}}" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-800 hover:border-blue-500 rounded-3xl shadow-xl">ヒント一覧</button>
+          <button id="transition-ph{{$i}}" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-1 px-3 border-b-4 border-blue-800 hover:border-blue-500 rounded-3xl shadow-xl md:py-2 md:px-4">ヒント一覧</button>
         </li>
       @endfor
     </ul>
@@ -28,9 +28,8 @@
 
   {{-- 質問投稿フォーム --}}
   <section class="text-center font-bold mt-10">
-    <h1 class="text-xl">質問投稿フォームはこちら</h1>
-    {{-- <button type="button" onclick="location.href='{{ route('./question') }}' ">質問</button> --}}
-    <button type="button" id="transition-question" class="bg-blue-500 hover:bg-blue-400 text-white font-bold my-4 py-2 px-6 border-b-4 border-blue-800 hover:border-blue-500 rounded-2xl text-xl shadow-xl">質問</button>
+    <h1 class="text-xs md:text-xl">質問投稿フォームはこちら</h1>
+    <button type="button" id="transition-question" class="bg-blue-500 hover:bg-blue-400 text-white font-bold my-4 py-2 px-6 md:py-2 md:px-6 border-b-4 border-blue-800 hover:border-blue-500 rounded-2xl shadow-xl text-xs md:text-sm lg:text-lg">質問</button>
   </section>
 </body>
 </html>
