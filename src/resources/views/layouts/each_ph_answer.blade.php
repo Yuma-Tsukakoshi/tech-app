@@ -17,7 +17,7 @@
 
     <section>
         <div class="flex justify-evenly m-2 p-2 md:m-4 md:p-4 font-bold text-sm md:text-2xl">
-            <h2 class="text-[6px]">week絞り込み</h2>
+            <h2 class="text-[6px] md:text-2xl">week絞り込み</h2>
             {{-- TODO data(1,2,3,4)取ってきてph()のところに入れる --}}
             <form id="form" onsubmit="return false">
                 <label for="week" class="cursor-pointer">week</label>
